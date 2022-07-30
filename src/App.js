@@ -11,11 +11,10 @@ function App() {
     "Have a shower"
   ])
 
-  // This will call our setTodo function, 
-  // to update our list of todos
+  // Define a function which will add a new
+  // provided todo to our list of todos in state
   function addTodo(todo) {
-    // We use spread syntax here to add our 
-    // new todo to our list of old todos
+    // Add todo to state:
     setTodos([...todos, todo])
   }
 
@@ -24,20 +23,15 @@ function App() {
   // it starts with a capital
   return (
     <div>
-      <h1>My Todo {todos}</h1>
+      <h1>My Todos</h1>
       {/* 
         loop over each todo and render a react component
         called <TodoItem /> with the todo as a prop
        */}
       {todos.map((todo, index) => {
-        return <TodoItem key={index} todo={todo} />
+        return <TodoItem key={index} myTodo={todo} />
       })}
 
-      {/* 
-        Render a form with a function addTodo as a property. When
-        we submit our form, the addTodo function should be called
-        above to update our list of todos
-      */}
       <TodoForm addTodo={addTodo} />
     </div>
   );

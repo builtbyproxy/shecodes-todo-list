@@ -1,9 +1,9 @@
 import React from 'react'
 
 function TodoItem(props) {
-  const { todo } = props
+  const { myTodo } = props
   return (
-    <div>{todo}</div>
+    <div>{myTodo}</div>
   )
 }
 
