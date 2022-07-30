@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './todoForm.css'
+
 function TodoForm(props) {
   const [value, setValue] = React.useState("");
 
@@ -15,7 +17,6 @@ function TodoForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
     // Send our collected 'newTodo' to our parent
-    console.log("I'm going to submit: ", value)
     props.addTodo(value)
     setValue("")
   }
